@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import { validateQRUrl } from "./services/qr/qrValidator.js";
 import { fetchVerificationPage } from "./services/qr/webFetcher.js";
+import { extractCertificateData } from "./services/qr/certificateExtractor.js";
 
 const app = express();
 
@@ -25,28 +26,22 @@ app.post("/api/qr", async (req, res) => {
   try {
     const page = await fetchVerificationPage(qrData);
 
-    console.log("Status:", page.status);
-    console.log("Content Type:", page.contentType);
-    console.log("Final URL:", page.url);
-    console.log("HTML preview:", page.body.slice(0, 3000));
-console.log("Contains certificate:", page.body.toLowerCase().includes("certificate"));
-console.log("Contains student:", page.body.toLowerCase().includes("student"));
-console.log("Contains course:", page.body.toLowerCase().includes("course"));
-console.log("Contains certificate ID:", page.body.includes("9ab92ac2"));
+    const certificateData = extractCertificateData(
+      page.body,
+      qrData
+    );
 
     res.json({
       success: true,
-      status: page.status,
-      contentType: page.contentType,
-      url: page.url,
-      bodyLength: page.body.length
+      validation,
+      certificateData
     });
   } catch (error) {
     console.error("Fetch error:", error.message);
 
     res.status(500).json({
       success: false,
-      message: "Failed to fetch verification URL"
+      message: "Failed to process verification URL"
     });
   }
 });
