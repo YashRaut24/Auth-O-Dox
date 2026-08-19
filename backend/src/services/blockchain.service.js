@@ -1,64 +1,61 @@
-    import { ethers } from "ethers";
+import { ethers } from "ethers";
     import "dotenv/config"
 
-    const provider =
-        new ethers.JsonRpcProvider(
-            process.env.BLOCKCHAIN_RPC_URL
-        );
-
-    const wallet =
-        new ethers.Wallet(
-            process.env.ISSUER_PRIVATE_KEY,
-            provider
-        );
-
-    const contractAbi = [ "function registerCertificate(bytes32 certificateHash) external",
+const contractAbi = [ "function registerCertificate(bytes32 certificateHash) external",
         "function verifyCertificate(bytes32 certificateHash) external view returns (bool exists, address issuer, uint256 timestamp)", 
         "function hasRole(bytes32 role, address account) external view returns (bool)", 
-        "function ISSUER_ROLE() external view returns (bytes32)",
-        "function DEFAULT_ADMIN_ROLE() external view returns (bytes32)"
+        "function ISSUER_ROLE() external view returns (bytes32)"
      ];
 
 
-    const contract =
-        new ethers.Contract(
-            process.env.CONTRACT_ADDRESS,
-            contractAbi,
-            wallet
-        );
+function getContract() {
+    const required = ["BLOCKCHAIN_RPC_URL", "ISSUER_PRIVATE_KEY", "CONTRACT_ADDRESS"];
+    const missing = required.filter((name) => !process.env[name]);
+    if (missing.length) throw new Error(`Missing blockchain configuration: ${missing.join(", ")}`);
 
-    const adminRole = await contract.DEFAULT_ADMIN_ROLE();
+    const provider = new ethers.JsonRpcProvider(process.env.BLOCKCHAIN_RPC_URL);
+    const wallet = new ethers.Wallet(process.env.ISSUER_PRIVATE_KEY, provider);
+    return { wallet, contract: new ethers.Contract(process.env.CONTRACT_ADDRESS, contractAbi, wallet) };
+}
 
-    const isAdmin = await contract.hasRole(
-        adminRole,
-        wallet.address
-    );
-
-    console.log("Backend wallet:", wallet.address);
-    console.log("Is admin:", isAdmin);
+function toBytes32(certificateHash) {
+    if (!/^[a-fA-F0-9]{64}$/.test(certificateHash)) throw new Error("Invalid SHA-256 certificate hash");
+    return `0x${certificateHash}`;
+}
 
 
-    export async function registerCertificate(
+export async function registerCertificate(
         certificateHash
     ) {
 
-        const bytes32Hash =
-            "0x" + certificateHash;
+        const { wallet, contract } = getContract();
+        const bytes32Hash = toBytes32(certificateHash);
+
+        const issuerRole = await contract.ISSUER_ROLE(); 
+        if (!await contract.hasRole(issuerRole, wallet.address)) {
+            throw new Error(`Issuer wallet ${wallet.address} does not have ISSUER_ROLE`);
+        }
 
         const transaction =
             await contract.registerCertificate(
                 bytes32Hash
             );
         
-        const issuerRole = await contract.ISSUER_ROLE(); 
-        // Check whether our wallet has ISSUER_ROLE 
-        const hasRole = await contract.hasRole( issuerRole, wallet.address );
-        console.log( "Issuer wallet:", wallet.address );
-
         const receipt =
             await transaction.wait();
 
+        if (!receipt || receipt.status !== 1) throw new Error("Certificate registration transaction failed");
+
+        console.log("CertificateRegistry deployed to:", await contract.getAddress());    
+
         return {
-            transactionHash: receipt.hash
+            transactionHash: receipt.hash,
+            blockNumber: receipt.blockNumber
         };
     }
+
+export async function verifyCertificateOnChain(certificateHash) {
+    const { contract } = getContract();
+    const [exists, issuer, timestamp] = await contract.verifyCertificate(toBytes32(certificateHash));
+    return { exists, issuer, timestamp: Number(timestamp) };
+}

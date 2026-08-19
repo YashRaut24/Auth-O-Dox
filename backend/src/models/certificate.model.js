@@ -29,9 +29,29 @@ const certificateSchema = new mongoose.Schema(
             required: true
         },
 
+        imageUrl: {
+            type: String,
+            trim: true
+        },
+
         issuerAddress: {
             type: String,
             required: true
+        },
+
+        ocrText: {
+            type: String,
+            required: true
+        },
+
+        ocrConfidence: {
+            type: Number,
+            required: true
+        },
+
+        blockchainVerified: {
+            type: Boolean,
+            default: false
         }
     },
     {

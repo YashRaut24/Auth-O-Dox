@@ -2,7 +2,8 @@ import express from "express";
 import multer from "multer";
 
 import {
-    issueCertificate
+    issueCertificate,
+    verifyCertificate
 } from "../controllers/certificate.controller.js";
 
 const router = express.Router();
@@ -15,6 +16,12 @@ router.post(
     "/issue",
     upload.single("certificate"),
     issueCertificate
+);
+
+router.post(
+    "/verify",
+    upload.single("certificate"),
+    verifyCertificate
 );
 
 export default router;
