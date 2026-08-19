@@ -1,0 +1,72 @@
+import "./FraudAnalysis.css";
+
+const fraudTypes = [
+  {
+    label: "QR mismatch",
+    value: 42,
+    count: 78,
+  },
+  {
+    label: "Certificate ID mismatch",
+    value: 34,
+    count: 63,
+  },
+  {
+    label: "Hash mismatch",
+    value: 29,
+    count: 54,
+  },
+  {
+    label: "Issuer mismatch",
+    value: 24,
+    count: 45,
+  },
+  {
+    label: "Document anomaly",
+    value: 19,
+    count: 35,
+  },
+  {
+    label: "Duplicate certificate",
+    value: 13,
+    count: 24,
+  },
+];
+
+function FraudAnalysis() {
+  return (
+    <div className="fraud-analysis">
+      <div className="fraud-summary">
+        <div>
+          <span className="fraud-summary-label">FLAGGED CASES</span>
+          <strong>187</strong>
+        </div>
+
+        <div className="risk-summary">
+          <span className="risk-dot"></span>
+          <span>Requires review</span>
+        </div>
+      </div>
+
+      <div className="fraud-list">
+        {fraudTypes.map((item) => (
+          <div className="fraud-item" key={item.label}>
+            <div className="fraud-item-header">
+              <span>{item.label}</span>
+              <strong>{item.count}</strong>
+            </div>
+
+            <div className="fraud-bar">
+              <div
+                className="fraud-bar-fill"
+                style={{ width: `${item.value}%` }}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default FraudAnalysis;

@@ -1,0 +1,48 @@
+.issuer-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.issuer-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.issuer-table th {
+    padding: 11px 12px;
+    text-align: left;
+    border-bottom: 1px solid #d9e2ec;
+    color: #829ab1;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.issuer-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #edf2f7;
+    color: #627d98;
+    font-size: 11px;
+}
+
+.issuer-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.issuer-name {
+    color: #102a43 !important;
+    font-weight: 700;
+}
+
+.issuer-status {
+    display: inline-flex;
+    padding: 4px 7px;
+    border-radius: 4px;
+    background: #f0fdf4;
+    color: #166534;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+}

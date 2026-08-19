@@ -1,0 +1,127 @@
+.user-page {
+    min-height: 100vh;
+    background: #f5f7fa;
+    color: #102a43;
+}
+
+.user-header {
+    height: 78px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #d9e2ec;
+}
+
+.user-brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.back-button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d9e2ec;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #486581;
+    font-size: 18px;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.back-button:hover {
+    background: #f5f7fa;
+    border-color: #9fb3c8;
+}
+
+.user-brand-name {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.user-brand-subtitle {
+    margin-top: 2px;
+    color: #829ab1;
+    font-size: 10px;
+}
+
+.user-security {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #486581;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.user-security span {
+    width: 7px;
+    height: 7px;
+    background: #15803d;
+    border-radius: 50%;
+}
+
+.user-content {
+    width: min(900px, 90%);
+    margin: 0 auto;
+    padding: 65px 0;
+}
+
+.user-intro {
+    margin-bottom: 30px;
+}
+
+.user-label {
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.user-intro h1 {
+    margin: 10px 0 10px;
+    color: #102a43;
+    font-size: 38px;
+    letter-spacing: -1.2px;
+}
+
+.user-intro p {
+    max-width: 600px;
+    color: #627d98;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.verification-wrapper {
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #d9e2ec;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .user-header {
+        padding: 0 5%;
+    }
+
+    .user-security {
+        display: none;
+    }
+
+    .user-content {
+        padding: 45px 0;
+    }
+
+    .user-intro h1 {
+        font-size: 31px;
+    }
+
+    .verification-wrapper {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,260 @@
+.admin-page {
+    min-height: 100vh;
+    background: #f5f7fa;
+    color: #102a43;
+}
+
+.admin-header {
+    height: 76px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #d9e2ec;
+}
+
+.admin-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.admin-back-button {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #d9e2ec;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #486581;
+    font-size: 17px;
+}
+
+.admin-back-button:hover {
+    background: #f5f7fa;
+    border-color: #9fb3c8;
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-brand-mark {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: #102a43;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.admin-brand-name {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.admin-brand-subtitle {
+    margin-top: 2px;
+    color: #829ab1;
+    font-size: 9px;
+}
+
+.admin-security {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #486581;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.admin-security span {
+    width: 7px;
+    height: 7px;
+    background: #15803d;
+    border-radius: 50%;
+}
+
+.admin-content {
+    width: min(1450px, 92%);
+    margin: 0 auto;
+    padding: 42px 0 70px;
+}
+
+.admin-title-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.admin-overline {
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+}
+
+.admin-title-row h1 {
+    margin: 8px 0 7px;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: #102a43;
+}
+
+.admin-title-row p {
+    color: #627d98;
+    font-size: 13px;
+}
+
+.demo-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 11px;
+    border: 1px solid #d9e2ec;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #627d98;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.demo-badge span {
+    width: 6px;
+    height: 6px;
+    background: #b45309;
+    border-radius: 50%;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 18px;
+}
+
+.dashboard-panel {
+    background: #ffffff;
+    border: 1px solid #d9e2ec;
+    border-radius: 9px;
+    padding: 24px;
+    margin-bottom: 18px;
+}
+
+.verification-panel,
+.fraud-panel {
+    min-height: 360px;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.panel-heading h2 {
+    margin: 0;
+    color: #102a43;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.panel-heading p {
+    margin: 5px 0 0;
+    color: #829ab1;
+    font-size: 11px;
+}
+
+.panel-period {
+    padding: 5px 8px;
+    border: 1px solid #d9e2ec;
+    border-radius: 4px;
+    color: #829ab1;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.view-all-button {
+    border: none;
+    background: transparent;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.view-all-button:hover {
+    text-decoration: underline;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #627d98;
+    font-size: 10px;
+}
+
+.live-indicator span {
+    width: 6px;
+    height: 6px;
+    background: #15803d;
+    border-radius: 50%;
+}
+
+@media (max-width: 1150px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .admin-header {
+        padding: 0 4%;
+    }
+
+    .admin-security {
+        display: none;
+    }
+
+    .admin-content {
+        width: 92%;
+        padding-top: 30px;
+    }
+
+    .admin-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-panel {
+        padding: 18px;
+    }
+}
