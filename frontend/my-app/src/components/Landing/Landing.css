@@ -112,7 +112,7 @@
 
 .role-selection {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-top: 55px;
 }
@@ -264,4 +264,10 @@
     .landing-footer {
         padding: 0 5%;
     }
+}
+
+.issuer-icon {
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
 }

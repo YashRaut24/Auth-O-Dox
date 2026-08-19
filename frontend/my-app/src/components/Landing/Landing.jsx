@@ -1,6 +1,6 @@
 import "./Landing.css";
 
-function Landing({ onUser, onAdmin }) {
+function Landing({ onUser, onAdmin, onIssuer }) {
   return (
     <main className="landing-page">
       <div className="landing-shell">
@@ -51,6 +51,23 @@ function Landing({ onUser, onAdmin }) {
                 <p>
                   Upload a certificate and check its authenticity through the
                   verification system.
+                </p>
+              </div>
+
+              <div className="role-arrow">→</div>
+            </button>
+
+            <button className="role-card" onClick={onIssuer}>
+              <div className="role-icon issuer-icon">
+                <span>IS</span>
+              </div>
+
+              <div className="role-content">
+                <span className="role-label">FOR ISSUERS</span>
+                <h2>Issuer Portal</h2>
+                <p>
+                  For authorized institutions to issue and manage verified
+                  certificates.
                 </p>
               </div>
 

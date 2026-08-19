@@ -63,3 +63,196 @@ button {
 #root {
   min-height: 100vh;
 }
+
+html[data-theme="dark"] body {
+  background: #050d16;
+  color: #eaf2f8;
+}
+
+html[data-theme="dark"] .landing-page,
+html[data-theme="dark"] .user-page,
+html[data-theme="dark"] .admin-page,
+html[data-theme="dark"] .issuer-auth-page,
+html[data-theme="dark"] .issuer-dashboard-page,
+html[data-theme="dark"] .issue-certificate-page {
+  background: #050d16;
+  color: #eaf2f8;
+}
+
+html[data-theme="dark"] .landing-header,
+html[data-theme="dark"] .landing-footer,
+html[data-theme="dark"] .user-header,
+html[data-theme="dark"] .admin-header,
+html[data-theme="dark"] .issuer-dashboard-header,
+html[data-theme="dark"] .issue-certificate-header,
+html[data-theme="dark"] .issuer-login-card,
+html[data-theme="dark"] .role-card,
+html[data-theme="dark"] .verification-wrapper,
+html[data-theme="dark"] .issuer-dashboard-panel,
+html[data-theme="dark"] .dashboard-panel,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .issue-form,
+html[data-theme="dark"] .issue-success-panel,
+html[data-theme="dark"] .issuer-empty-panel,
+html[data-theme="dark"] .issuer-information-panel,
+html[data-theme="dark"] .issuer-table-wrapper {
+  background: #0e2238;
+  border-color: #29445f;
+}
+
+html[data-theme="dark"] .brand-name,
+html[data-theme="dark"] .landing-content h1,
+html[data-theme="dark"] .role-content h2,
+html[data-theme="dark"] .user-brand-name,
+html[data-theme="dark"] .user-content h1,
+html[data-theme="dark"] .issuer-brand,
+html[data-theme="dark"] .issuer-login-heading h1,
+html[data-theme="dark"] .issuer-dashboard-brand,
+html[data-theme="dark"] .issuer-dashboard-intro h1,
+html[data-theme="dark"] .issuer-dashboard-panel h2,
+html[data-theme="dark"] .issue-heading h1,
+html[data-theme="dark"] .issue-success-panel h1,
+html[data-theme="dark"] .issuer-page-heading h1,
+html[data-theme="dark"] .issuer-information-panel dd,
+html[data-theme="dark"] .issuer-certificates-table td {
+  color: #eaf2f8;
+}
+
+html[data-theme="dark"] .landing-description,
+html[data-theme="dark"] .role-content p,
+html[data-theme="dark"] .brand-caption,
+html[data-theme="dark"] .secure-label,
+html[data-theme="dark"] .landing-footer,
+html[data-theme="dark"] .user-brand-subtitle,
+html[data-theme="dark"] .user-content p,
+html[data-theme="dark"] .issuer-login-heading > p:last-child,
+html[data-theme="dark"] .issuer-security-note,
+html[data-theme="dark"] .issuer-dashboard-intro p,
+html[data-theme="dark"] .issuer-dashboard-panel p,
+html[data-theme="dark"] .issue-heading p,
+html[data-theme="dark"] .issuer-page-heading p,
+html[data-theme="dark"] .issuer-muted-message,
+html[data-theme="dark"] .issuer-empty-panel,
+html[data-theme="dark"] .issuer-information-panel dt,
+html[data-theme="dark"] .issuer-certificates-table th {
+  color: #9fb3c8;
+}
+
+html[data-theme="dark"] .issuer-form label,
+html[data-theme="dark"] .issue-form label,
+html[data-theme="dark"] .certificate-field strong,
+html[data-theme="dark"] .certificate-field span {
+  color: #eaf2f8;
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select,
+html[data-theme="dark"] .issuer-form input,
+html[data-theme="dark"] .issue-form input {
+  border-color: #29445f;
+  background: #071522;
+  color: #eaf2f8;
+}
+
+html[data-theme="dark"] .issuer-back-button,
+html[data-theme="dark"] .issuer-logout-button,
+html[data-theme="dark"] .issue-secondary-button {
+  border-color: #29445f;
+  background: #0e2238;
+  color: #eaf2f8;
+}
+
+html[data-theme="dark"] .issuer-dashboard-nav,
+html[data-theme="dark"] .issuer-certificates-table th,
+html[data-theme="dark"] .issuer-certificates-table td,
+html[data-theme="dark"] .issuer-information-panel div,
+html[data-theme="dark"] .issue-summary,
+html[data-theme="dark"] .issue-summary div {
+  border-color: #29445f;
+}
+
+html[data-theme="dark"] .admin-back-button {
+  border-color: #29445f;
+  background: #0e2238;
+  color: #b6c7d8;
+}
+
+html[data-theme="dark"] .admin-back-button:hover {
+  background: #163a5c;
+  border-color: #63b3ed;
+}
+
+html[data-theme="dark"] .admin-brand-mark {
+  background: #071522;
+}
+
+html[data-theme="dark"] .admin-title-row h1,
+html[data-theme="dark"] .panel-heading h2,
+html[data-theme="dark"] .stat-card-value,
+html[data-theme="dark"] .fraud-summary strong,
+html[data-theme="dark"] .fraud-item-header strong,
+html[data-theme="dark"] .activity-title,
+html[data-theme="dark"] .issuer-name {
+  color: #eaf2f8;
+}
+
+html[data-theme="dark"] .admin-title-row p,
+html[data-theme="dark"] .panel-heading p,
+html[data-theme="dark"] .stat-card-title,
+html[data-theme="dark"] .fraud-summary-label,
+html[data-theme="dark"] .fraud-item-header span,
+html[data-theme="dark"] .activity-detail,
+html[data-theme="dark"] .activity-time,
+html[data-theme="dark"] .chart-legend span,
+html[data-theme="dark"] .issuer-table td,
+html[data-theme="dark"] .issuer-table th {
+  color: #9fb3c8;
+}
+
+html[data-theme="dark"] .panel-period,
+html[data-theme="dark"] .demo-badge {
+  border-color: #29445f;
+  background: #0e2238;
+  color: #9fb3c8;
+}
+
+html[data-theme="dark"] .fraud-summary,
+html[data-theme="dark"] .issuer-table th,
+html[data-theme="dark"] .issuer-table td,
+html[data-theme="dark"] .activity-item {
+  border-color: #29445f;
+}
+
+html[data-theme="dark"] .fraud-bar {
+  background: #1b3650;
+}
+
+html[data-theme="dark"] .stat-card-status.verified,
+html[data-theme="dark"] .activity-icon.verified,
+html[data-theme="dark"] .issuer-status {
+  background: #123b2b;
+  color: #86efac;
+}
+
+html[data-theme="dark"] .stat-card-status.suspicious,
+html[data-theme="dark"] .activity-icon.suspicious {
+  background: #493316;
+  color: #fbbf24;
+}
+
+html[data-theme="dark"] .stat-card-status.invalid,
+html[data-theme="dark"] .activity-icon.invalid {
+  background: #451a1a;
+  color: #fca5a5;
+}
+
+html[data-theme="dark"] .recharts-cartesian-grid-horizontal line {
+  stroke: #29445f;
+}
+
+html[data-theme="dark"] .recharts-tooltip-wrapper .recharts-default-tooltip {
+  border-color: #29445f !important;
+  background: #0e2238 !important;
+  color: #eaf2f8;
+}

@@ -14,6 +14,9 @@ import { extractCertificateFields } from "./services/ocr/extractCertificateField
 
 import { compareCertificateData } from "./services/verification/compareCertificate.js";
 
+import certificateRoutes from "./routes/certificate.route.js";
+import issuerAuthRoutes from "./routes/issuerAuthRoutes.js";
+
 const app = express();
 
 app.use(express.json());
@@ -149,6 +152,17 @@ app.post(
       });
     }
   }
+);
+
+//Routes
+app.use(
+    "/api/certificates",
+    certificateRoutes
+);
+
+app.use(
+  "/api/auth/issuer",
+  issuerAuthRoutes
 );
 
 app.post("/api/qr", async (req, res) => {
